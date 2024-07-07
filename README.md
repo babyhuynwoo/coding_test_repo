@@ -60,28 +60,26 @@ python solution.py  /  python3 solution.py
 - `/problem`: 문제의 설명 및 문제의 풀이 코드를 포함하는 디렉토리입니다.
 - `/tests`: 문제 풀이에 대한 테스트 결과를 저장하는 디렉토리입니다.
 
-coding-test-practice/
-│
-├── Algorithms/
-│   ├── Greedy_Algorithm/
-│   │   ├── problems
-│   │   │   ├── solution.py
-│   │   │   └── tests.py
-│   ├── Sorting_Algorithm/
-│   │   ├── problems
-│   │   │   ├── solution.py
-│   │   │   └── tests.py
-│   └── Dynamic_Programming_Algorithm/
-│   │   ├── problems
-│   │   │   ├── solution.py
-│   │   │   └── tests.py
-│   ├── Hashing_Algorithm/
-│   │   └── problems
-│   │       ├── solution.py
-│   │       └── tests.py
-│   │
-│   (추가예정)
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
+coding-test-repo/
+- Algorithms/
+  - Greedy_Algorithm/
+    - problems/
+      - solution.py
+      - tests.py
+  - Sorting_Algorithm/
+    - problems/
+      - solution.py
+      - tests.py
+  - Dynamic_Programming_Algorithm/
+    - problems/
+      - solution.py
+      - tests.py
+  - Hashing_Algorithm/
+    - problems/
+      - solution.py
+      - tests.py
+  - (추가예정)
+
+- .gitignore
+- README.md
+- requirements.txt
