@@ -4,7 +4,7 @@ import psutil
 import os
 from solution import *
 
-class TestBigNumberRule(unittest.TestCase):
+class TestRotaKnight(unittest.TestCase):
     def setUp(self):
         # 테스트 시작 전 메모리 사용량 측정
         self.mem_before = psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2
@@ -23,14 +23,14 @@ class TestBigNumberRule(unittest.TestCase):
         print(f"Memory used: {self.mem_after - self.mem_before:.2f} MB")
         print()
 
-    def test_basic_example(self):
-        self.assertEqual(big_number_rule(5, 8, 3, [2, 4, 5, 4, 6]), 46)
+    def test_edge_of_board(self):
+        self.assertEqual(royal_knight(1, 1), 2)
 
-    def test_all_same_numbers(self):
-        self.assertEqual(big_number_rule(3, 7, 2, [5, 5, 5]), 35)
+    def test_center_of_board(self):
+        self.assertEqual(royal_knight(4, 4), 8)
 
-    def test_max_repetitions(self):
-        self.assertEqual(big_number_rule(4, 100, 5, [1, 2, 3, 4]), 396)
+    def test_corner_of_board(self):
+        self.assertEqual(royal_knight(8, 8), 2)
 
 if __name__ == '__main__':
     unittest.main()

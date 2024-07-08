@@ -1,9 +1,3 @@
-import sys
-
-sys.path.append('..')
-
-from measure_limits import *
-
 def input_until_one():
 
     N, K = [int(_) for _ in input('first input (N, K): ').split()]

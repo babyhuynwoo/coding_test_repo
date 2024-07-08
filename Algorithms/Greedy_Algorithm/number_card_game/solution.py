@@ -1,9 +1,3 @@
-import sys
-
-sys.path.append('..')
-
-from measure_limits import *
-
 def input_number_card_game():
     
     N, M = [int(_) for _ in input('first input (N, M): ').split()]

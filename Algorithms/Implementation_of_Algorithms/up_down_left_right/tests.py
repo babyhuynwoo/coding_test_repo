@@ -4,7 +4,7 @@ import psutil
 import os
 from solution import *
 
-class TestBigNumberRule(unittest.TestCase):
+class TestUpDownLeftRight(unittest.TestCase):
     def setUp(self):
         # 테스트 시작 전 메모리 사용량 측정
         self.mem_before = psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2
@@ -23,14 +23,14 @@ class TestBigNumberRule(unittest.TestCase):
         print(f"Memory used: {self.mem_after - self.mem_before:.2f} MB")
         print()
 
-    def test_basic_example(self):
-        self.assertEqual(big_number_rule(5, 8, 3, [2, 4, 5, 4, 6]), 46)
+    def test_moving_within_bounds(self):
+        self._test_movement(N=5, moving_plan=['R', 'R', 'U', 'D', 'D'], expected=[3, 3])
 
-    def test_all_same_numbers(self):
-        self.assertEqual(big_number_rule(3, 7, 2, [5, 5, 5]), 35)
+    def test_moving_out_of_bounds(self):
+        self._test_movement(N=5, moving_plan=['L', 'U', 'U', 'U'], expected=[1, 1])
 
-    def test_max_repetitions(self):
-        self.assertEqual(big_number_rule(4, 100, 5, [1, 2, 3, 4]), 396)
+    def test_no_movement(self):
+        self._test_movement(N=5, moving_plan=[], expected=[1, 1])
 
 if __name__ == '__main__':
     unittest.main()

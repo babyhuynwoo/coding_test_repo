@@ -4,7 +4,7 @@ import psutil
 import os
 from solution import *
 
-class TestBigNumberRule(unittest.TestCase):
+class TestCount3InTimer(unittest.TestCase):
     def setUp(self):
         # 테스트 시작 전 메모리 사용량 측정
         self.mem_before = psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2
@@ -23,14 +23,20 @@ class TestBigNumberRule(unittest.TestCase):
         print(f"Memory used: {self.mem_after - self.mem_before:.2f} MB")
         print()
 
-    def test_basic_example(self):
-        self.assertEqual(big_number_rule(5, 8, 3, [2, 4, 5, 4, 6]), 46)
+    def test_base_case(self):
+            self.assertEqual(count_three_in_timer(0), 1575)
 
-    def test_all_same_numbers(self):
-        self.assertEqual(big_number_rule(3, 7, 2, [5, 5, 5]), 35)
+    def test_no_three_in_hour(self):
+        self.assertEqual(count_three_in_timer(1), 3150)
 
-    def test_max_repetitions(self):
-        self.assertEqual(big_number_rule(4, 100, 5, [1, 2, 3, 4]), 396)
+    def test_three_in_hour(self):
+        self.assertEqual(count_three_in_timer(3), 8325)
+
+    def test_double_digit_hour_with_three(self):
+        self.assertEqual(count_three_in_timer(13), 26100)
+
+    def test_max_hour(self):
+        self.assertEqual(count_three_in_timer(23), 43875)
 
 if __name__ == '__main__':
     unittest.main()
