@@ -41,8 +41,16 @@ class TestAntSoldier(unittest.TestCase):
         # 대규모 데이터 테스트
         sample = [random.randint(1, 1000) for _ in range(100000)]
         self.assertEqual(soldier_ant(sample), answer(sample))
+        self.assertEqual(my_answer(sample), answer(sample))
         sample = [random.randint(1, 10000) for _ in range(1000000)]
         self.assertEqual(soldier_ant(sample), answer(sample))
+        self.assertEqual(my_answer(sample), answer(sample))
+
+    def test_my_answer_example_cases(self):
+        self.assertEqual(my_answer([1, 2, 3, 4, 5]), answer([1, 2, 3, 4, 5]))
+        self.assertEqual(my_answer([10, 20, 30, 40, 50]), answer([10, 20, 30, 40, 50]))
+        self.assertEqual(my_answer([5, 5, 10, 100, 10, 5]), answer([5, 5, 10, 100, 10, 5]))
+
 
 if __name__ == '__main__':
     unittest.main()

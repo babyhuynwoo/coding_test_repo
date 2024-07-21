@@ -23,3 +23,28 @@ def answer(array):
 
 
     return d[n - 1]
+
+def my_answer(stores):
+    # 실행시간 면에서 이득 
+    length = len(stores)
+
+    dp = stores.copy()
+    dp[2] += dp[0]
+
+    for i in range(3, length):
+        dp[i] = max(dp[i] + dp[i-3], dp[i] + dp[i-2])
+
+    return max(dp[-1], dp[-2])
+
+def my_answer(stores):
+    # 메모리 면에서 이득
+    length = len(stores)
+
+    stores[2] += stores[0] 
+
+    for i in range(3, length):
+        stores[i] = max(stores[i] + stores[i-3], stores[i] + stores[i-2])
+
+    max_value = max(stores[-1], stores[-2])
+
+    return max_value
